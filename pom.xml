@@ -59,14 +59,14 @@
         </dependency>
 
 
-        <!--Testing-->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!--Required for @ServiceConnection annotation-->
+        <!-- Required for @ServiceConnection annotation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
@@ -76,19 +76,17 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
-            <version>1.19.3</version>
             <scope>test</scope>
         </dependency>
 
-        <!--Required for @Container annotation-->
+        <!-- Required for @Container annotation -->
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>1.19.3</version>
             <scope>test</scope>
         </dependency>
 
-        <!--Required for PostgreSQLContainer class-->
+        <!-- Required for PostgreSQLContainer class -->
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
