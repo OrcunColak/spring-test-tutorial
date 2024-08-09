@@ -14,6 +14,8 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
+    private final HelloBean helloBean;
+
     @Transactional
     public Book create(Book book) {
         return bookRepository.save(book);
@@ -21,6 +23,7 @@ public class BookService {
 
     @Transactional(readOnly = true)
     public Book findById(Long bookId) {
+        helloBean.sayHello ();
         return bookRepository.findById(bookId)
                 .orElseThrow();
     }

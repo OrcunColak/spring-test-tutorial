@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -15,6 +16,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// This test shows how to use @MockBean and @SpyBean
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = BookService.class)
 class BookServiceTest {
@@ -25,6 +27,8 @@ class BookServiceTest {
     @MockBean
     private BookRepository bookRepository;
 
+    @SpyBean
+    private HelloBean helloBean;
 
     @Test
     void findById() {
@@ -35,5 +39,7 @@ class BookServiceTest {
 
         assertEquals("John Doe", book.getAuthor());
         Mockito.verify(bookRepository, Mockito.times(1)).findById(1L);
+
+        Mockito.verify(helloBean, Mockito.times(1)).sayHello();
     }
 }
