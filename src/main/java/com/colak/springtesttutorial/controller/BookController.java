@@ -24,7 +24,7 @@ public class BookController {
 
     @GetMapping("/book/{bookId}")
     public Book getById(@PathVariable Long bookId) {
-        return bookService.getById(bookId);
+        return bookService.findById(bookId);
     }
 
     @PutMapping("/book/{bookId}")
